@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks - Dark Theme</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen p-6 font-sans">
+
+    <div class="max-w-4xl mx-auto space-y-6">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-indigo-400">JavaScript Interactive Tasks</h1>
+            <p class="text-slate-400 text-sm mt-1">Dark Theme Edition</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- Task 1: Click Me Button -->
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-md">
+                <h2 class="text-lg font-semibold text-indigo-300 mb-3">1. Click Me Button</h2>
+                <button id="clickBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-4 py-2 rounded-lg transition">Click Me</button>
+            </div>
+
+            <!-- Task 2: Mouse Enter / Leave Div -->
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-md">
+                <h2 class="text-lg font-semibold text-indigo-300 mb-3">2. Mouse Enter & Leave</h2>
+                <div id="hoverDiv" class="bg-slate-800 p-4 rounded-lg text-center cursor-pointer transition duration-300">
+                    Hover over this box!
+                </div>
+            </div>
+
+            <!-- Task 3: Mouse Down / Up Div -->
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-md">
+                <h2 class="text-lg font-semibold text-indigo-300 mb-3">3. Mouse Down & Up</h2>
+                <div id="mouseUpDownDiv" class="bg-slate-800 p-4 rounded-lg text-center cursor-pointer select-none">
+                    Press and release mouse here
+                </div>
+            </div>
+
+            <!-- Task 4: Mouse Move Position -->
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-md">
+                <h2 class="text-lg font-semibold text-indigo-300 mb-3">4. Mouse Move Tracker</h2>
+                <div id="mouseBox" class="bg-slate-800 p-4 rounded-lg text-center h-20 flex items-center justify-center text-sm text-slate-300">
+                    Move your mouse inside this box
+                </div>
+            </div>
+
+            <!-- Task 5: Keydown & Keyup -->
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-md">
+                <h2 class="text-lg font-semibold text-indigo-300 mb-3">5. Keyboard Events</h2>
+                <input type="text" id="keyInput" placeholder="Type something..." class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-slate-100 focus:outline-none focus:border-indigo-500 mb-2">
+                <p id="keyMsg" class="text-xs text-slate-400">Key status will appear here</p>
+            </div>
+
+            <!-- Task 6: Form Submit -->
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-md">
+                <h2 class="text-lg font-semibold text-indigo-300 mb-3">6. Form Submit Handler</h2>
+                <form id="myForm" class="space-y-3">
+                    <input type="text" id="formName" placeholder="Name" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-slate-100 text-sm focus:outline-none focus:border-indigo-500">
+                    <input type="email" id="formEmail" placeholder="Email" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-slate-100 text-sm focus:outline-none focus:border-indigo-500">
+                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium py-2 rounded-lg transition">Submit</button>
+                </form>
+                <p id="formMsg" class="text-xs text-emerald-400 mt-2 font-medium"></p>
+            </div>
+
+            <!-- Task 7: Custom Event -->
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-md">
+                <h2 class="text-lg font-semibold text-indigo-300 mb-3">7. Custom Event ("startGame")</h2>
+                <button id="startEventBtn" class="bg-purple-600 hover:bg-purple-700 text-white font-medium px-4 py-2 rounded-lg transition mb-2">Trigger Game</button>
+                <p id="eventMsg" class="text-xs text-purple-300"></p>
+            </div>
+
+            <!-- Task 8: Phone Validation -->
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-md">
+                <h2 class="text-lg font-semibold text-indigo-300 mb-3">8. Phone Validation</h2>
+                <input type="text" id="phoneInput" placeholder="Enter phone number" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-slate-100 focus:outline-none focus:border-indigo-500 mb-2">
+                <p id="phoneStatus" class="text-xs font-semibold"></p>
+            </div>
+
+            <!-- Task 9: Name Validation (Letters Only) -->
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-md">
+                <h2 class="text-lg font-semibold text-indigo-300 mb-3">9. Name (Letters Only)</h2>
+                <input type="text" id="nameInput" placeholder="Enter letters only" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-slate-100 focus:outline-none focus:border-indigo-500 mb-2">
+                <p id="nameStatus" class="text-xs font-semibold"></p>
+            </div>
+
+            <!-- Task 10: Email Validation -->
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-md">
+                <h2 class="text-lg font-semibold text-indigo-300 mb-3">10. Email Format Validation</h2>
+                <input type="text" id="emailInput" placeholder="Enter email" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-slate-100 focus:outline-none focus:border-indigo-500 mb-2">
+                <p id="emailStatus" class="text-xs font-semibold"></p>
+            </div>
+
+            <!-- Task 11: Password Validation -->
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-md">
+                <h2 class="text-lg font-semibold text-indigo-300 mb-3">11. Password Validation</h2>
+                <input type="password" id="passInput" placeholder="At least 1 letter & 1 number" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-slate-100 focus:outline-none focus:border-indigo-500 mb-2">
+                <p id="passStatus" class="text-xs font-semibold"></p>
+            </div>
+
+            <!-- Task 12: Find String Occurrences -->
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-md md:col-span-2">
+                <h2 class="text-lg font-semibold text-indigo-300 mb-3">12. Find "JavaScript" Occurrences</h2>
+                <p class="text-slate-300 text-sm italic mb-3">"I love JavaScript and JavaScript is easy."</p>
+                <button id="findBtn" class="bg-teal-600 hover:bg-teal-700 text-white font-medium px-4 py-2 rounded-lg text-sm transition mb-2">Find Occurrences</button>
+                <p id="findResult" class="text-xs text-teal-300 font-mono"></p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // 1. Click Me Button
+        const clickBtn = document.getElementById('clickBtn');
+        clickBtn.addEventListener('click', () => {
+            clickBtn.textContent = 'Clicked!';
+        });
+
+        // 2. Mouse Enter & Leave
+        const hoverDiv = document.getElementById('hoverDiv');
+        hoverDiv.addEventListener('mouseenter', () => {
+            hoverDiv.style.backgroundColor = '#4338ca'; // Indigo 700
+        });
+        hoverDiv.addEventListener('mouseleave', () => {
+            hoverDiv.style.backgroundColor = '';
+        });
+
+        // 3. Mouse Down & Up
+        const mouseUpDownDiv = document.getElementById('mouseUpDownDiv');
+        mouseUpDownDiv.addEventListener('mousedown', () => {
+            mouseUpDownDiv.textContent = 'Mouse Down';
+        });
+        mouseUpDownDiv.addEventListener('mouseup', () => {
+            mouseUpDownDiv.textContent = 'Mouse Up';
+        });
+
+        // 4. Mouse Move Position
+        const mouseBox = document.getElementById('mouseBox');
+        mouseBox.addEventListener('mousemove', (e) => {
+            mouseBox.textContent = `X: ${e.offsetX}, Y: ${e.offsetY}`;
+        });
+        mouseBox.addEventListener('mouseleave', () => {
+            mouseBox.textContent = 'Move your mouse inside this box';
+        });
+
+        // 5. Keydown & Keyup
+        const keyInput = document.getElementById('keyInput');
+        const keyMsg = document.getElementById('keyMsg');
+        keyInput.addEventListener('keydown', (e) => {
+            keyMsg.textContent = `Pressed key: ${e.key}`;
+        });
+        keyInput.addEventListener('keyup', () => {
+            keyMsg.textContent = 'Key released.';
+        });
+
+        // 6. Form Submit
+        const myForm = document.getElementById('myForm');
+        const formMsg = document.getElementById('formMsg');
+        myForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            formMsg.textContent = 'Form Submitted Successfully!';
+        });
+
+        // 7. Custom Event
+        const startEventBtn = document.getElementById('startEventBtn');
+        const eventMsg = document.getElementById('eventMsg');
+        const startGameEvent = new CustomEvent('startGame');
+        
+        document.addEventListener('startGame', () => {
+            eventMsg.textContent = '🚀 "startGame" event was successfully triggered and captured!';
+        });
+
+        startEventBtn.addEventListener('click', () => {
+            document.dispatchEvent(startGameEvent);
+        });
+
+        // Helper function for validation styling
+        function updateValidationStatus(element, isValid, customText = null) {
+            if (element.value.trim() === '') {
+                element.textContent = '';
+                return;
+            }
+            if (isValid) {
+                element.textContent = customText || 'Valid';
+                element.className = 'text-xs font-semibold text-emerald-400';
+            } else {
+                element.textContent = customText || 'Invalid';
+                element.className = 'text-xs font-semibold text-rose-400';
+            }
+        }
+
+        // 8. Phone Validation (Simple check: 10-15 digits)
+        const phoneInput = document.getElementById('phoneInput');
+        const phoneStatus = document.getElementById('phoneStatus');
+        phoneInput.addEventListener('input', () => {
+            const phoneRegex = /^\d{10,15}$/;
+            updateValidationStatus(phoneStatus, phoneRegex.test(phoneInput.value));
+        });
+
+        // 9. Name Validation (Letters only)
+        const nameInput = document.getElementById('nameInput');
+        const nameStatus = document.getElementById('nameStatus');
+        nameInput.addEventListener('input', () => {
+            const nameRegex = /^[A-Za-z\s]+$/;
+            updateValidationStatus(nameStatus, nameRegex.test(nameInput.value));
+        });
+
+        // 10. Email Validation
+        const emailInput = document.getElementById('emailInput');
+        const emailStatus = document.getElementById('emailStatus');
+        emailInput.addEventListener('input', () => {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            updateValidationStatus(emailStatus, emailRegex.test(emailInput.value));
+        });
+
+        // 11. Password Validation (At least one letter and one number)
+        const passInput = document.getElementById('passInput');
+        const passStatus = document.getElementById('passStatus');
+        passInput.addEventListener('input', () => {
+            const passRegex = /^(?=.*[A-Za-z])(?=.*\d).+$/;
+            updateValidationStatus(passStatus, passRegex.test(passInput.value));
+        });
+
+        // 12. Find String Occurrences
+        const findBtn = document.getElementById('findBtn');
+        const findResult = document.getElementById('findResult');
+        findBtn.addEventListener('click', () => {
+            const sentence = "I love JavaScript and JavaScript is easy.";
+            const matches = sentence.match(/JavaScript/g);
+            const count = matches ? matches.length : 0;
+            findResult.textContent = `Found "${matches ? matches.join(', ') : ''}" — Total occurrences: ${count}`;
+        });
+    </script>
+</body>
+</html>
